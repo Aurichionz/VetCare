@@ -372,3 +372,13 @@ tr:hover {
     font-size: 13px;
   }
 }
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar nav a .material-symbols-outlined {
+  font-size: 22px;
+}

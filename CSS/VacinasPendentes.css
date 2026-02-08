@@ -120,31 +120,55 @@ tr:hover {
 ========================= */
 .icon-btn {
   display: inline-flex;
-  align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: #f3f4f6;
+  align-items: center;
+  padding: 6px 10px;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
   margin-right: 4px;
-  font-size: 16px;
-  transition: background 0.2s ease, transform 0.1s ease;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  color: #ffffff;
 }
 
-.icon-btn:hover {
-  background: #e5e7eb;
-  transform: translateY(-1px);
+/* Detalhar - verde */
+.icon-btn.details {
+  background-color: #059669;
 }
 
-.icon-btn.danger {
-  background: #fca5a5;
+.icon-btn.details:hover {
+  background-color: #059669;
 }
 
-.icon-btn.danger:hover {
-  background: #f87171;
+/* Editar - azul */
+.icon-btn.edit {
+  background-color: #057c57;
 }
+
+.icon-btn.edit:hover {
+  background-color: #057d57;
+}
+
+/* Excluir - vermelho */
+.icon-btn.delete {
+  background-color: #dc2626;
+}
+
+.icon-btn.delete:hover {
+  background-color: #b91c1c;
+}
+
+/* Vacinar / Histórico - laranja */
+.icon-btn.vacina {
+  background-color: #059669;
+}
+
+.icon-btn.vacina:hover {
+  background-color: #059669;
+}
+
+
 
 /* =========================
    RESPONSIVO
@@ -174,3 +198,4 @@ tr:hover {
     font-size: 0.8rem;
   }
 }
+
