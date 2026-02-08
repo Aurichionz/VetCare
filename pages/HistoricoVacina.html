@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Histórico de Vacinas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/HistoricoVacina.css">
+  <link rel="stylesheet" href="../css/NovaVacina.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <!-- Cabeçalho com logo e nome -->
+  <div class="sidebar-header">
+    <div class="logo-circle">
+      <img src="../assets/logo.png" alt="Logo VetCare" class="sidebar-logo">
+    </div>
+    <h2>VetCare</h2>
+  </div>
+
+  <!-- Linha de separação -->
+  <hr class="sidebar-divider">
+
+  <!-- Menu -->
+  <nav>
+    <a href="Dashboard.html">Painel</a>
+    <a href="CadastroTutor.html">Cadastrar Tutor</a>
+    <a href="CadastroAnimal.html">Cadastrar Animal</a>
+    <a href="ListarAnimais.html" class="active" >Listar Animais</a>
+    <a href="ListarTutores.html">Listar Tutores</a>
+    <a href="VacinasPendentes.html">Vacinas Pendentes</a>
+    <a href="Relatorios.html">Relatórios</a>
+    <a href="../index.html">Sair</a>
+  </nav>
+</aside>
+
+<main class="content animate-fade-in">
+
+  <div class="page-header">
+    <h1>Nova Vacina</h1>
+    <p>Registrar aplicação de vacina</p>
+  </div>
+
+ <div class="form-card">
+  <h3>Dados do Animal</h3>
+
+  <div class="animal-info">
+    <div class="info-card">
+      <div class="info-label">Nome</div>
+      <div class="info-value">Rex</div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-label">Tipo</div>
+      <div class="info-value">Cão</div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-label">Raça</div>
+      <div class="info-value">Labrador</div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-label">Tutor</div>
+      <div class="info-value">João Silva</div>
+    </div>
+
+     <div class="info-card">
+      <div class="info-label">Idade</div>
+      <div class="info-value">5 anos</div>
+    </div>
+    
+       <div class="info-card">
+      <div class="info-label">Peso</div>
+      <div class="info-value">30 kg</div>
+    </div>
+
+     <div class="info-card">
+      <div class="info-label">Sexo</div>
+      <div class="info-value">Macho</div>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+  <div class="form-card" style="margin-top: 32px;">
+    <div class="table-header-flex">
+      <h2>Informações de Vacinação</h2>
+    </div>
+  <table style="margin-top: 24px;">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Vacina</th>
+        <th>Aplicação</th>
+        <th>Revacinação</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Raiva</td>
+        <td>10/01/2025</td>
+        <td>10/01/2026</td>
+        <td><span class="status ok">Em dia</span></td>
+        <td>
+          <button class="icon-btn">✏️</button>
+          <button class="icon-btn danger">🗑️</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="form-actions">
+    <a href="ListarAnimais.html">
+      <button class="secondary">Voltar</button>
+    </a>
+    <a href="NovaVacina.html">
+      <button>+ Nova Vacina</button>
+    </a>
+  </div>
+
+</main>
+
+</body>
+</html>

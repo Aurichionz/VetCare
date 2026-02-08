@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastrar Animal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/CadastroAnimal.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <!-- Cabeçalho com logo e nome -->
+  <div class="sidebar-header">
+    <div class="logo-circle">
+      <img src="../assets/logo.png" alt="Logo VetCare" class="sidebar-logo">
+    </div>
+    <h2>VetCare</h2>
+  </div>
+
+  <!-- Linha de separação -->
+  <hr class="sidebar-divider">
+
+  <!-- Menu -->
+  <nav>
+    <a href="Dashboard.html">Painel</a>
+    <a href="CadastroTutor.html">Cadastrar Tutor</a>
+    <a href="CadastroAnimal.html" class="active">Cadastrar Animal</a>
+    <a href="ListarAnimais.html">Listar Animais</a>
+    <a href="ListarTutores.html">Listar Tutores</a>
+    <a href="VacinasPendentes.html">Vacinas Pendentes</a>
+    <a href="Relatorios.html">Relatórios</a>
+    <a href="../index.html">Sair</a>
+  </nav>
+</aside>
+
+<!-- CONTEÚDO -->
+<main class="content">
+
+  <h1>Cadastrar Animal</h1>
+  <p class="subtitle">Preencha os dados do animal</p>
+
+  <div class="form-card">
+
+    <!-- Mensagem de sucesso -->
+    <div id="animal-success" class="success-box hidden">
+      ✓ Animal cadastrado com sucesso!
+    </div>
+
+    <form id="animal-form">
+
+      <!-- Dados do Animal -->
+      <h3 class="form-section">Dados do Animal</h3>
+      <div class="form-grid">
+
+        <div class="animal-field">
+          <label>Nome</label>
+          <input type="text" name="nome" placeholder="Nome do animal" required>
+        </div>
+
+        <div class="animal-field">
+          <label>Espécie</label>
+          <select name="especie" required>
+            <option value="">Selecione</option>
+            <option>Cão</option>
+            <option>Gato</option>
+            <option>Outro</option>
+          </select>
+        </div>
+
+        <div class="animal-field">
+          <label>Raça</label>
+          <input type="text" name="raca" placeholder="Raça do animal" required>
+        </div>
+
+        <div class="animal-field">
+          <label>Sexo</label>
+          <select name="sexo" required>
+            <option value="">Selecione</option>
+            <option>Macho</option>
+            <option>Fêmea</option>
+          </select>
+        </div>
+
+        <div class="animal-field">
+          <label>Idade</label>
+          <input type="number" name="idade" placeholder="Idade em anos" min="0" required>
+        </div>
+
+        <div class="animal-field">
+          <label>Peso (kg)</label>
+          <input type="number" name="peso" placeholder="Peso em kg" step="0.1" required>
+        </div>
+
+      </div>
+
+      <!-- Tutor -->
+        <div class="form-card" style="margin-top: 32px;">
+    <div class="table-header-flex">
+      <h2>Vacinas que Necessitam Atenção</h2>
+      <a href="#" class="link-primary">Ver todas</a>
+    </div>
+
+      <h3 class="form-section">Responsável</h3>
+      <div class="animal-field">
+        <label>Tutor</label>
+        <select name="tutorId" required>
+          <option value="">Selecione</option>
+          <option>João Silva</option>
+          <option>Maria Oliveira</option>
+        </select>
+      </div>
+
+      <!-- Ações -->
+      <div class="form-actions">
+        <button type="submit" id="btn-animal">Cadastrar</button>
+        <a href="Dashboard.html">
+          <button type="button" class="secondary">Cancelar</button>
+        </a>
+      </div>
+
+    </form>
+  </div>
+
+</main>
+
+<script src="../js/app.js"></script>
+</body>
+</html>

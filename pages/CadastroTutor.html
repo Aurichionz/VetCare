@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastrar Tutor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/CadastroTutor.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <!-- Cabeçalho com logo e nome -->
+  <div class="sidebar-header">
+    <div class="logo-circle">
+      <img src="../assets/logo.png" alt="Logo VetCare" class="sidebar-logo">
+    </div>
+    <h2>VetCare</h2>
+  </div>
+
+  <!-- Linha de separação -->
+  <hr class="sidebar-divider">
+
+  <nav>
+    <a href="Dashboard.html">Painel</a>
+    <a href="CadastroTutor.html" class="active">Cadastrar Tutor</a>
+    <a href="CadastroAnimal.html">Cadastrar Animal</a>
+    <a href="ListarAnimais.html">Listar Animais</a>
+    <a href="ListarTutores.html">Listar Tutores</a>
+    <a href="VacinasPendentes.html">Vacinas Pendentes</a>
+    <a href="Relatorios.html">Relatórios</a>
+    <a href="../index.html">Sair</a>
+  </nav>
+</aside>
+
+<!-- CONTEÚDO -->
+<main class="content animate-fade-in">
+
+  <h1>Cadastrar Tutor</h1>
+  <p class="subtitle">Preencha os dados do responsável pelo animal</p>
+
+  <div class="form-card">
+
+    <!-- Mensagem de sucesso -->
+    <div id="tutor-success" class="success-box hidden">
+      ✓ Tutor cadastrado com sucesso!
+    </div>
+
+    <form id="tutor-form">
+
+      <!-- DADOS PESSOAIS -->
+      <h3 class="form-section">Dados Pessoais</h3>
+
+      <div class="form-grid">
+        <div>
+          <label>Nome Completo</label>
+          <input type="text" name="nome" placeholder="Digite o nome" required>
+        </div>
+
+        <div>
+          <label>CPF</label>
+          <input type="text" name="cpf" placeholder="000.000.000-00" required>
+        </div>
+
+        <div class="col-span">
+          <label>Telefone</label>
+          <input type="text" name="telefone" placeholder="(00) 00000-0000" required>
+        </div>
+      </div>
+
+      <!-- ENDEREÇO -->
+      <h3 class="form-section">Endereço</h3>
+
+      <div class="form-grid">
+        <div>
+          <label>Rua</label>
+          <input type="text" name="rua" placeholder="Nome da rua" required>
+        </div>
+
+        <div>
+          <label>Número</label>
+          <input type="text" name="numero" placeholder="Nº" required>
+        </div>
+
+        <div>
+          <label>Bairro</label>
+          <input type="text" name="bairro" placeholder="Nome do bairro" required>
+        </div>
+
+        <div>
+          <label>Cidade</label>
+          <input type="text" name="cidade" placeholder="Nome da cidade" required>
+        </div>
+
+        <div class="col-span">
+          <label>Estado</label>
+          <select name="estado" required>
+            <option value="">Selecione</option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- AÇÕES -->
+      <div class="form-actions">
+        <button type="submit" id="btn-tutor">Cadastrar</button>
+        <a href="Dashboard.html">
+          <button type="button" class="secondary">Voltar</button>
+        </a>
+      </div>
+
+    </form>
+  </div>
+
+</main>
+
+<script src="../js/app.js"></script>
+</body>
+</html>

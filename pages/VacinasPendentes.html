@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Vacinas Pendentes</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/VacinasPendentes.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <!-- Cabeçalho com logo e nome -->
+  <div class="sidebar-header">
+    <div class="logo-circle">
+      <img src="../assets/logo.png" alt="Logo VetCare" class="sidebar-logo">
+    </div>
+    <h2>VetCare</h2>
+  </div>
+
+  <hr class="sidebar-divider">
+
+  <nav>
+    <a href="Dashboard.html">Painel</a>
+    <a href="CadastroTutor.html">Cadastrar Tutor</a>
+    <a href="CadastroAnimal.html">Cadastrar Animal</a>
+    <a href="ListarAnimais.html">Listar Animais</a>
+    <a href="ListarTutores.html">Listar Tutores</a>
+    <a href="VacinasPendentes.html" class="active">Vacinas Pendentes</a>
+    <a href="Relatorios.html">Relatórios</a>
+    <a href="../index.html">Sair</a>
+  </nav>
+</aside>
+
+<main class="content animate-fade-in">
+
+  <!-- Cabeçalho da página -->
+  <div class="page-header">
+    <h1>Vacinas Pendentes</h1>
+  </div>
+
+  <!-- Cards de estatísticas -->
+  <div class="stats-container">
+    <div class="stat-card danger">
+      <p>Vacinas Atrasadas</p>
+      <h2>1</h2>
+    </div>
+    <div class="stat-card warning">
+      <p>Próximas do Vencimento</p>
+      <h2>2</h2>
+    </div>
+  </div>
+
+<!-- Tabela de Vacinas Pendentes -->
+  <div class="form-card" style="margin-top: 32px;">
+    <div class="table-header-flex">
+      <h2>Vacinas que Necessitam Atenção</h2>
+      <a href="#" class="link-primary">Ver todas</a>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Animal</th>
+          <th>Tutor</th>
+          <th>Vacina</th>
+          <th>Data Revacinação</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rex</td>
+          <td>João Silva</td>
+          <td>Antirrábica</td>
+          <td>10/02/2026</td>
+          <td><span class="status expired">Pendente</span></td>
+          <td>
+            <a href="NovaVacina.html" class="icon-btn">💉</a>
+            <a href="HistoricoVacina.html" class="icon-btn">📄</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Luna</td>
+          <td>João Silva</td>
+          <td>V10</td>
+          <td>15/02/2026</td>
+          <td><span class="status warning">Próxima</span></td>
+          <td>
+            <a href="NovaVacina.html" class="icon-btn">💉</a>
+            <a href="HistoricoVacinas.html" class="icon-btn">📄</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>
+
+</body>
+</html>

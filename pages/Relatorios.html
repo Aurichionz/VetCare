@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatórios - VetClinic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/Relatorios.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <!-- Cabeçalho com logo e nome -->
+  <div class="sidebar-header">
+    <div class="logo-circle">
+      <img src="../assets/logo.png" alt="Logo VetCare" class="sidebar-logo">
+    </div>
+    <h2>VetCare</h2>
+  </div>
+
+  <hr class="sidebar-divider">
+
+  <!-- Menu -->
+  <nav>
+    <a href="Dashboard.html">Painel</a>
+    <a href="CadastroTutor.html">Cadastrar Tutor</a>
+    <a href="CadastroAnimal.html">Cadastrar Animal</a>
+    <a href="ListarAnimais.html">Listar Animais</a>
+    <a href="ListarTutores.html">Listar Tutores</a>
+    <a href="VacinasPendentes.html">Vacinas Pendentes</a>
+    <a href="Relatorios.html" class="active">Relatórios</a>
+    <a href="../index.html">Sair</a>
+  </nav>
+</aside>
+
+<main class="content animate-fade-in">
+  <!-- Cabeçalho da página -->
+  <div class="page-header">
+    <h1>Relatórios</h1>
+    <p>Visualize os dados do sistema</p>
+  </div>
+
+  <!-- Cards de relatório -->
+  <div class="grid grid-cols-2 gap-4 mb-8" id="reportCards">
+    <button class="report-card" data-report="animais">
+      <div class="card-icon">
+        <img src="../assets/logo.png" alt="Logo VetCare">
+      </div>
+      <div class="card-text">
+        <h3>Relatório de Animais</h3>
+        <p>Lista completa de animais cadastrados</p>
+      </div>
+      <span class="count" id="countAnimais">0</span>
+    </button>
+
+    <button class="report-card" data-report="vacinas">
+      <div class="card-icon">
+        <img src="../assets/images.png" alt="Logo VetCare">
+      </div>
+      <div class="card-text">
+        <h3>Relatório de Vacinas</h3>
+        <p>Histórico de vacinas aplicadas</p>
+      </div>
+      <span class="count" id="countVacinas">0</span>
+    </button>
+  </div>
+
+  <!-- Botão Gerar PDF -->
+  <div style="margin: 16px 0;">
+    <button id="btnPdf">📄 Gerar PDF</button>
+  </div>
+
+  <!-- Área onde o relatório selecionado será exibido -->
+  <div id="reportContent"></div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="../js/relatorios.js"></script>
+</body>
+</html>

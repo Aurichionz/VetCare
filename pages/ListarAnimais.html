@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Animais</title>
+  <link rel="stylesheet" href="../css/Listagem.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <!-- Cabeçalho com logo e nome -->
+  <div class="sidebar-header">
+    <div class="logo-circle">
+      <img src="../assets/logo.png" alt="Logo VetCare" class="sidebar-logo">
+    </div>
+    <h2>VetCare</h2>
+  </div>
+
+  <!-- Linha de separação -->
+  <hr class="sidebar-divider">
+
+  <nav>
+    <a href="Dashboard.html">Painel</a>
+    <a href="CadastroTutor.html">Cadastrar Tutor</a>
+    <a href="CadastroAnimal.html" >Cadastrar Animal</a>
+    <a href="ListarAnimais.html" class="active">Listar Animais</a>
+    <a href="ListarTutores.html">Listar Tutores</a>
+    <a href="VacinasPendentes.html">Vacinas Pendentes</a>
+    <a href="Relatorios.html">Relatórios</a>
+    <a href="../index.html">Sair</a>
+  </nav>
+</aside>
+
+<main class="content animate-fade-in">
+
+  <div class="page-header">
+    <div>
+      <h1>Lista de Animais</h1>
+      <p>Animais cadastrados no sistema</p>
+    </div>
+    <a href="CadastroAnimal.html">
+      <button>+ Novo Animal</button>
+    </a>
+  </div>
+
+  <!-- Filtros -->
+  <div class="form-card">
+    <div class="filters">
+      <input type="text" placeholder="Buscar por nome...">
+      <select>
+        <option>Todos os Tutores</option>
+      </select>
+      <select>
+        <option>Todos os Tipos</option>
+        <option>Cão</option>
+        <option>Gato</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Tabela -->
+    <div class="form-card" style="margin-top: 32px;">
+    <div class="table-header-flex">
+    </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Tutor</th>
+        <th>Tipo</th>
+        <th>Raça</th>
+        <th>Sexo</th>
+        <th>Idade</th>
+        <th>Peso</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Rex</td>
+        <td>João Silva</td>
+        <td>Cão</td>
+        <td>Labrador</td>
+        <td>Macho</td>
+        <td>5 anos</td>
+        <td>30 kg</td>
+        <td>
+         <td>
+        <a href="NovaVacina.html" class="icon-btn vacina" title="Vacinar">Vacinar</a>
+        <a href="HistoricoVacina.html" class="icon-btn details" title="Detalhar">Detalhar</a>
+        <a href="EditarAnimal.html" class="icon-btn edit" title="Editar">Editar</a>
+        <button class="icon-btn delete" title="Excluir"> Excluir</button>
+        </td>
+          <td>
+        </td>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Animal</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/EditarAnimal.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <div class="logo-circle">
+      <img src="../assets/logo.png" alt="Logo VetCare" class="sidebar-logo">
+    </div>
+    <h2>VetCare</h2>
+  </div>
+
+  <hr class="sidebar-divider">
+
+  <nav>
+    <a href="Dashboard.html">Painel</a>
+    <a href="CadastroTutor.html">Cadastrar Tutor</a>
+    <a href="CadastroAnimal.html">Cadastrar Animal</a>
+    <a href="ListarAnimais.html" class="active">Listar Animais</a>
+    <a href="ListarTutores.html">Listar Tutores</a>
+    <a href="VacinasPendentes.html">Vacinas Pendentes</a>
+    <a href="Relatorios.html">Relatórios</a>
+    <a href="../index.html">Sair</a>
+  </nav>
+</aside>
+
+<main class="content animate-fade-in">
+
+  <div class="page-header">
+    <h1>Editar Animal</h1>
+    <p class="subtitle">Atualize os dados do animal</p>
+  </div>
+
+  <div class="form-card">
+    <h3 class="form-section">Dados do Animal</h3>
+
+    <div class="form-grid">
+      <div class="info-card">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" value="Rex">
+      </div>
+
+      <div class="info-card">
+        <label for="tipo">Tipo</label>
+        <select id="tipo">
+          <option value="Cão" selected>Cão</option>
+          <option value="Gato">Gato</option>
+          <option value="Outro">Outro</option>
+        </select>
+      </div>
+
+      <div class="info-card">
+        <label for="raca">Raça</label>
+        <input type="text" id="raca" value="Labrador">
+      </div>
+
+      <div class="info-card">
+        <label for="tutor">Tutor</label>
+        <input type="text" id="tutor" value="João Silva">
+      </div>
+
+      <div class="info-card">
+        <label for="idade">Idade</label>
+        <input type="text" id="idade" value="5 anos">
+      </div>
+
+      <div class="info-card">
+        <label for="peso">Peso</label>
+        <input type="text" id="peso" value="30 kg">
+      </div>
+
+      <div class="info-card">
+        <label for="sexo">Sexo</label>
+        <select id="sexo">
+          <option value="Macho" selected>Macho</option>
+          <option value="Fêmea">Fêmea</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button class="icon-btn save">Salvar</button>
+      <a href="ListarAnimais.html"><button type="button" class="secondary">Voltar</button></a>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  // Salvar alterações (simulado)
+  document.querySelector('.icon-btn.save').addEventListener('click', function() {
+    const dados = {
+      nome: document.getElementById('nome').value,
+      tipo: document.getElementById('tipo').value,
+      raca: document.getElementById('raca').value,
+      tutor: document.getElementById('tutor').value,
+      idade: document.getElementById('idade').value,
+      peso: document.getElementById('peso').value,
+      sexo: document.getElementById('sexo').value
+    };
+
+    console.log('Dados atualizados:', dados);
+    alert('Dados do animal atualizados com sucesso!');
+    window.location.href = 'ListarAnimais.html';
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <!-- Cabeçalho com logo e nome -->
+  <div class="sidebar-header">
+    <div class="logo-circle">
+      <img src="../assets/logo.png" alt="Logo VetCare" class="sidebar-logo">
+    </div>
+    <h2>VetCare</h2>
+  </div>
+
+  <!-- Linha de separação -->
+  <hr class="sidebar-divider">
+
+  <!-- Menu -->
+  <nav>
+    <a href="Dashboard.html" class="active">Painel</a>
+    <a href="CadastroTutor.html">Cadastrar Tutor</a>
+    <a href="CadastroAnimal.html">Cadastrar Animal</a>
+    <a href="ListarAnimais.html">Listar Animais</a>
+    <a href="ListarTutores.html">Listar Tutores</a>
+    <a href="VacinasPendentes.html">Vacinas Pendentes</a>
+    <a href="Relatorios.html">Relatórios</a>
+    <a href="../index.html">Sair</a>
+  </nav>
+</aside>
+
+<!-- CONTEÚDO -->
+<main class="content animate-fade-in">
+
+  <h1>Painel de Controle</h1>
+  <p class="subtitle">Bem-vindo ao sistema de gestão da clínica</p>
+
+<div class="cards-container">
+  <div class="card animais">
+    <div class="card-text">
+      <span class="title">Total de Animais</span>
+      <span class="count" id="total-animais">0</span>
+      <span class="subtitle">Cadastrados no sistema</span>
+    </div>
+    <div class="card-icon-box"><div class="card-icon">
+        <img src="../assets/logo.png" alt="Logo VetCare">
+      </div></div>
+  </div>
+
+  <div class="card vacinas-dia">
+    <div class="card-text">
+      <span class="title">Vacinas em Dia</span>
+      <span class="count" id="vacinas-dia">0</span>
+      <span class="subtitle">Animais vacinados</span>
+    </div>
+    <div class="card-icon-box"><div class="card-icon">
+        <img src="../assets/images.png" alt="Logo VetCare">
+      </div></div>
+  </div>
+
+  <div class="card proximas-vencimento">
+    <div class="card-text">
+      <span class="title">Próx. do Vencimento</span>
+      <span class="count" id="vacinas-proximas">0</span>
+      <span class="subtitle">Atenção necessária</span>
+    </div>
+    <div class="card-icon-box"><div class="card-icon">
+        <img src="../assets/0be97ed532babd9e473dd97ec4fee170.png" alt="Logo VetCare">
+      </div></div>
+  </div>
+
+  <div class="card pendentes">
+    <div class="card-text">
+      <span class="title">Vacinas Pendentes</span>
+      <span class="count" id="vacinas-pendentes">0</span>
+      <span class="subtitle">Requerem ação</span>
+    </div>
+    <div class="card-icon-box">   <img src="../assets/—Pngtree—red warning sign icon_6686804.png" alt="Logo VetCare"></div>
+  </div>
+</div>
+
+  <!-- TABELA -->
+  <div class="form-card" style="margin-top: 32px;">
+    <div class="table-header-flex">
+      <h2>Vacinas que Necessitam Atenção</h2>
+      <a href="VacinasPendentes.html" class="link-primary">Ver todas</a>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Animal</th>
+          <th>Tutor</th>
+          <th>Vacina</th>
+          <th>Data Revacinação</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rex</td>
+          <td>João</td>
+          <td>Raiva</td>
+          <td>10/01/2026</td>
+          <td><span class="status expired">Pendente</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<script src="../js/dashboard.js"></script>
+</main>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Tutor</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/EditarTutores.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <div class="logo-circle">
+      <img src="../assets/logo.png" alt="Logo VetCare" class="sidebar-logo">
+    </div>
+    <h2>VetCare</h2>
+  </div>
+
+  <hr class="sidebar-divider">
+
+  <nav>
+    <a href="Dashboard.html">Painel</a>
+    <a href="CadastroTutor.html">Cadastrar Tutor</a>
+    <a href="CadastroAnimal.html">Cadastrar Animal</a>
+    <a href="ListarAnimais.html">Listar Animais</a>
+    <a href="ListarTutores.html" class="active">Listar Tutores</a>
+    <a href="VacinasPendentes.html">Vacinas Pendentes</a>
+    <a href="Relatorios.html">Relatórios</a>
+    <a href="../index.html">Sair</a>
+  </nav>
+</aside>
+
+<main class="content animate-fade-in">
+
+  <div class="page-header">
+    <h1>Editar Tutor</h1>
+    <p class="subtitle">Atualize os dados do tutor</p>
+  </div>
+
+  <div class="form-card">
+    <h3 class="form-section">Dados do Tutor</h3>
+
+    <div class="form-grid">
+      <div class="info-card">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" value="João Silva">
+      </div>
+
+      <div class="info-card">
+        <label for="telefone">Telefone</label>
+        <input type="text" id="telefone" value="(11) 99999-8888">
+      </div>
+
+      <div class="info-card">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" value="joao@email.com">
+      </div>
+
+      <div class="info-card col-span">
+        <label for="endereco">Endereço</label>
+        <input type="text" id="endereco" value="Rua das Flores, 123">
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button class="icon-btn save">Salvar</button>
+      <a href="ListarTutores.html" class="icon-btn cancel">Cancelar</a>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  // Salvar alterações (simulado)
+  document.querySelector('.icon-btn.save').addEventListener('click', function() {
+    const dados = {
+      nome: document.getElementById('nome').value,
+      telefone: document.getElementById('telefone').value,
+      email: document.getElementById('email').value,
+      endereco: document.getElementById('endereco').value
+    };
+
+    console.log('Dados do tutor atualizados:', dados);
+    alert('Dados do tutor atualizados com sucesso!');
+    window.location.href = 'ListarTutores.html';
+  });
+</script>
+
+</body>
+</html>

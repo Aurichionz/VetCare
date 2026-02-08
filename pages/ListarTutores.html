@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tutores</title>
+  <link rel="stylesheet" href="../css/Listagem.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <!-- Cabeçalho com logo e nome -->
+  <div class="sidebar-header">
+    <div class="logo-circle">
+      <img src="../assets/logo.png" alt="Logo VetCare" class="sidebar-logo">
+    </div>
+    <h2>VetCare</h2>
+  </div>
+
+  <!-- Linha de separação -->
+  <hr class="sidebar-divider">
+
+  <!-- Menu -->
+  <nav>
+    <a href="Dashboard.html">Painel</a>
+    <a href="CadastroTutor.html">Cadastrar Tutor</a>
+    <a href="CadastroAnimal.html">Cadastrar Animal</a>
+    <a href="ListarAnimais.html">Listar Animais</a>
+    <a href="ListarTutores.html" class="active">Listar Tutores</a>
+    <a href="VacinasPendentes.html">Vacinas Pendentes</a>
+    <a href="Relatorios.html">Relatórios</a>
+    <a href="../index.html">Sair</a>
+  </nav>
+</aside>
+
+<main class="content animate-fade-in">
+
+  <div class="page-header">
+    <div>
+      <h1>Lista de Tutores</h1>
+      <p>Tutores cadastrados</p>
+    </div>
+    <a href="CadastroTutor.html">
+      <button>+ Novo Tutor</button>
+    </a>
+  </div>
+
+ <div class="form-card">
+    <div class="filters">
+      <input type="text" placeholder="Buscar por nome...">
+    </div>
+  </div>
+
+   <div class="form-card" style="margin-top: 32px;">
+    <div class="table-header-flex">
+    </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Animais</th>
+        <th>Telefone</th>
+        <th>Endereço</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>João Silva</td>
+        <td>Rex, Luna (2)</td>
+        <td>(11) 99999-9999</td>
+        <td>São Paulo - Rua das Flores, 123</td>
+        <td>
+        <td>
+    <a href="EditarTutores.html" class="icon-btn edit" title="Editar">Editar</a>
+        <button class="icon-btn delete" title="Excluir"> Excluir</button>
+      </td>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</main>
+</body>
+</html>
