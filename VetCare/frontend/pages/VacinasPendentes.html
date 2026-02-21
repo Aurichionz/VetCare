@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Vacinas Pendentes</title>
+
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="../css/VacinasPendentes.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <div class="logo-circle">
+      <img src="../assets/logo.png" class="sidebar-logo">
+    </div>
+    <h2>VetCare</h2>
+  </div>
+
+  <hr class="sidebar-divider">
+
+  <nav>
+    <a href="Dashboard.html">
+      <span class="material-symbols-outlined">home</span>
+      Painel
+    </a>
+
+    <a href="CadastroTutor.html">
+      <span class="material-symbols-outlined">add</span>
+      Cadastrar Tutor
+    </a>
+
+    <a href="CadastroAnimal.html">
+      <span class="material-symbols-outlined">add</span>
+      Cadastrar Animal
+    </a>
+
+    <a href="ListarAnimais.html">
+      <span class="material-symbols-outlined">pets</span>
+      Listar Animais
+    </a>
+
+    <a href="ListarTutores.html">
+      <span class="material-symbols-outlined">group</span>
+      Listar Tutores
+    </a>
+
+    <a href="VacinasPendentes.html" class="active">
+      <span class="material-symbols-outlined">vaccines</span>
+      Vacinas Pendentes
+    </a>
+
+    <a href="Relatorios.html">
+      <span class="material-symbols-outlined">description</span>
+      Relatórios
+    </a>
+
+    <a href="../index.html">
+      <span class="material-symbols-outlined">logout</span>
+      Sair
+    </a>
+  </nav>
+</aside>
+
+<main class="content">
+
+  <div class="page-header">
+    <h1>Vacinas Pendentes</h1>
+  </div>
+
+  <!-- CARDS -->
+  <div class="stats-container">
+    <div class="stat-card danger">
+      <p>Vacinas Atrasadas</p>
+      <h2 id="totalAtrasadas">0</h2>
+    </div>
+
+    <div class="stat-card warning">
+      <p>Próximas do Vencimento</p>
+      <h2 id="totalProximas">0</h2>
+    </div>
+  </div>
+
+  <!-- TABELA -->
+  <div class="form-card" style="margin-top: 32px;">
+    <h2>Lista de Vacinas</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Animal</th>
+          <th>Tutor</th>
+          <th>Vacina</th>
+          <th>Data Revacinação</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tbodyVacinas">
+      </tbody>
+    </table>
+  </div>
+
+</main>
+
+<script src="../js/VacinasPendentes.js"></script>
+</body>
+</html>

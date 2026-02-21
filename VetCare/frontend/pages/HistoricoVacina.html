@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Histórico de Vacinas</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/HistoricoVacina.css">
+  <link rel="stylesheet" href="../css/NovaVacina.css">
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <div class="logo-circle">
+      <img src="../assets/logo.png" class="sidebar-logo">
+    </div>
+    <h2>VetCare</h2>
+  </div>
+
+  <hr class="sidebar-divider">
+
+  <nav>
+    <a href="Dashboard.html">
+      <span class="material-symbols-outlined">home</span>
+      Painel
+    </a>
+
+    <a href="ListarAnimais.html" class="active">
+      <span class="material-symbols-outlined">pets</span>
+      Listar Animais
+    </a>
+
+    <a href="../index.html">
+      <span class="material-symbols-outlined">logout</span>
+      Sair
+    </a>
+  </nav>
+</aside>
+
+<main class="content animate-fade-in">
+
+  <div class="page-header">
+    <h1>Histórico de Vacinas</h1>
+    <p>Controle completo de vacinação</p>
+  </div>
+
+  <div class="form-card">
+    <h3>Dados do Animal</h3>
+
+    <div class="animal-info">
+
+      <div class="info-card">
+        <div class="info-label">Nome</div>
+        <div class="info-value" id="animalNome"></div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-label">Espécie</div>
+        <div class="info-value" id="animalEspecie"></div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-label">Raça</div>
+        <div class="info-value" id="animalRaca"></div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-label">Tutor</div>
+        <div class="info-value" id="animalTutor"></div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-label">Idade</div>
+        <div class="info-value" id="animalIdade"></div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-label">Peso</div>
+        <div class="info-value" id="animalPeso"></div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-label">Sexo</div>
+        <div class="info-value" id="animalSexo"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="form-card" style="margin-top: 32px;">
+    <h2>Informações de Vacinação</h2>
+
+    <table style="margin-top: 24px;">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Vacina</th>
+          <th>Aplicação</th>
+          <th>Revacinação</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaVacinas"></tbody>
+    </table>
+
+    <div class="form-actions">
+      <button type="button" class="secondary" onclick="window.history.back()">Voltar</button>
+    </div>
+
+  </div>
+
+</main>
+
+<script src="../js/HistoricoVacina.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastrar Tutor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/CadastroTutor.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+  
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <div class="logo-circle">
+      <img src="../assets/logo.png" class="sidebar-logo">
+    </div>
+    <h2>VetCare</h2>
+  </div>
+
+  <hr class="sidebar-divider">
+
+  <nav>
+    <a href="Dashboard.html">
+      <span class="material-symbols-outlined">home</span>
+      Painel
+    </a>
+
+    <a href="CadastroTutor.html" class="active">
+      <span class="material-symbols-outlined">add</span>
+      Cadastrar Tutor
+    </a>
+
+    <a href="CadastroAnimal.html">
+      <span class="material-symbols-outlined">add</span>
+      Cadastrar Animal
+    </a>
+
+    <a href="ListarAnimais.html">
+      <span class="material-symbols-outlined">pets</span>
+      Listar Animais
+    </a>
+
+    <a href="ListarTutores.html">
+      <span class="material-symbols-outlined">group</span>
+      Listar Tutores
+    </a>
+
+    <a href="VacinasPendentes.html">
+      <span class="material-symbols-outlined">vaccines</span>
+      Vacinas Pendentes
+    </a>
+
+    <a href="Relatorios.html  ">
+      <span class="material-symbols-outlined">description</span>
+      Relatórios
+    </a>
+
+    <a href="../index.html">
+      <span class="material-symbols-outlined">logout</span>
+      Sair
+    </a>
+  </nav>
+
+</aside>
+
+<main class="content animate-fade-in">
+
+  <h1>Cadastrar Tutor</h1>
+  <p class="subtitle">Preencha os dados do responsável pelo animal</p>
+
+  <div class="form-card">
+
+    <div id="mensagemErro" class="error" style="display:none;"></div>
+
+    <form id="formTutor">
+
+      <h3 class="form-section">Dados Pessoais</h3>
+
+      <div class="form-grid">
+        <div>
+          <label>Nome Completo</label>
+          <input type="text" name="nome" required>
+        </div>
+
+        <div>
+          <label>CPF</label>
+          <input type="text" name="cpf" required>
+        </div>
+
+        <div class="col-span">
+          <label>Telefone</label>
+          <input type="text" name="telefone" required>
+        </div>
+      </div>
+
+      <h3 class="form-section">Endereço</h3>
+
+      <div class="form-grid">
+        <div>
+          <label>Rua</label>
+          <input type="text" name="rua" required>
+        </div>
+
+        <div>
+          <label>Número</label>
+          <input type="text" name="numero" required>
+        </div>
+
+        <div>
+          <label>Bairro</label>
+          <input type="text" name="bairro" required>
+        </div>
+
+        <div>
+          <label>Cidade</label>
+          <input type="text" name="cidade" required>
+        </div>
+
+        <div class="col-span">
+          <label>Estado</label>
+          <select name="estado" required>
+            <option value="">Selecione</option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit">Cadastrar</button>
+        <button type="button" class="secondary" onclick="window.location.href='Dashboard.html'">
+          Voltar
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+</main>
+
+<script src="../JS/CadastroTutor.js"></script>
+</body>
+</html>

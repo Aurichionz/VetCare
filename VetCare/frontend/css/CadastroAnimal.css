@@ -1,0 +1,146 @@
+/* =========================
+   FORMULÁRIO - CADASTRO DE ANIMAL
+========================= */
+.content h1,
+.content .subtitle {
+  text-align: center; /* centraliza o texto */
+}
+
+.form-card {
+  background: #fff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto; /* centraliza horizontalmente */
+}
+
+.form-card h3.form-section {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 4px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-bottom: 16px;
+}
+
+.form-grid .col-span {
+  grid-column: span 2;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  font-size: 0.875rem;
+  transition: border 0.2s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #059669; /* verde */
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  background: #059669;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #047857;
+}
+
+button.secondary {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+button.secondary:hover {
+  background: #d1d5db;
+}
+
+/* =========================
+   AÇÕES DO FORM
+========================= */
+
+.form-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  justify-content: flex-start;
+}
+
+/* =========================
+   MENSAGENS
+========================= */
+
+.success-box {
+  background: #d1fae5;
+  color: #047857;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.hidden {
+  display: none;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid .col-span {
+    grid-column: span 1;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .form-card {
+    padding: 24px;
+  }
+}

@@ -1,0 +1,162 @@
+/* =========================
+   AJUSTES – NOVA VACINA
+   (compatível com CSS base)
+========================= */
+
+/* Header da página */
+.page-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.page-header p {
+  font-size: 14px;
+  color: hsl(210, 10%, 60%);
+}
+
+/* Card de dados do animal */
+.form-card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+/* Grid usado no HTML da vacina */
+.grid {
+  display: grid;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gap-2 {
+  gap: 8px;
+}
+
+.gap-4 {
+  gap: 16px;
+}
+
+/* Campos (field) – reaproveita padrão do projeto */
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.field label {
+  margin-bottom: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.field input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  font-size: 0.875rem;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #059669;
+}
+
+/* Botões dentro de links (cancelar) */
+.form-actions a {
+  text-decoration: none;
+}
+
+/* Mensagem de sucesso (compatível com success-box) */
+.success {
+  background: #d1fae5;
+  color: #047857;
+  padding: 12px;
+  border-radius: 12px;
+  margin-top: 16px;
+  font-weight: 500;
+}
+
+/* =========================
+   RESPONSIVO – NOVA VACINA
+========================= */
+@media (max-width: 768px) {
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.animal-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas fixas */
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.animal-info .info-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.animal-info .info-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.animal-info .info-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Mobile: empilha */
+@media (max-width: 640px) {
+  .animal-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  background: #059669;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #047857;
+}
+
+button.secondary {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+button.secondary:hover {
+  background: #d1d5db;
+}

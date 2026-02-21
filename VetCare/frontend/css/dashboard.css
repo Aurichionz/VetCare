@@ -1,0 +1,384 @@
+/* =========================
+   RESET + BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: hsl(160, 30%, 96%);
+  color: hsl(210, 15%, 20%);
+  min-height: 100vh;
+  display: flex;
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+/* Sidebar */
+.sidebar {
+  width: 230px;
+  height: 100vh;
+  background: var(--sidebar-bg, hsl(158, 83%, 30%));
+  color: var(--sidebar-text, #fff);
+  position: fixed;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+/* Cabeçalho da sidebar */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* espaço entre logo e nome */
+  margin-bottom: 16px;
+}
+
+/* Círculo ao redor da logo */
+.logo-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: hsl(158, 22%, 93%); /* fundo leve, transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo dentro do círculo */
+.sidebar-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* Divisor */
+.sidebar-divider {
+  border: none;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 16px;
+}
+
+/* Links do menu */
+.sidebar nav a {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  color: var(--sidebar-text, #fff);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  background: hsla(158, 83%, 19%, 0.763);
+}
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+.content {
+  margin-left: 240px;
+  padding: 32px 28px;
+  width: 100%;
+}
+
+.content h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.content .subtitle {
+  font-size: 14px;
+  color: hsl(210, 10%, 60%);
+  margin-bottom: 24px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards-container {
+  display: flex;
+  gap: 24px;            /* espaçamento entre os cards */
+  flex-wrap: wrap;       /* quebra linha em telas menores */
+  justify-content: start;
+  margin-top: 24px;
+}
+
+.card.vacinas-dia {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #27a44b;
+  border-radius: 1rem;  /* 16px */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 24px;
+  min-width: 220px;
+  max-width: 280px;
+  font-family: 'Inter', Arial, sans-serif;
+  color: #1f2937;       /* cinza escuro */
+  transition: all 0.2s ease;
+}
+
+.card.animais {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background:hsl(158, 83%, 30%);
+  border-radius: 1rem;  /* 16px */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 24px;
+  min-width: 220px;
+  max-width: 280px;
+  font-family: 'Inter', Arial, sans-serif;
+  color: #1f2937;       /* cinza escuro */
+  transition: all 0.2s ease;
+}
+
+.card.proximas-vencimento {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #e0c030;
+  border-radius: 1rem;  /* 16px */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 24px;
+  min-width: 220px;
+  max-width: 280px;
+  font-family: 'Inter', Arial, sans-serif;
+  color: #ffffff;       /* cinza escuro */
+  transition: all 0.2s ease;
+}
+
+.card.pendentes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #c23b3b;
+  border-radius: 1rem;  /* 16px */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 24px;
+  min-width: 220px;
+  max-width: 280px;
+  font-family: 'Inter', Arial, sans-serif;
+  color: #ffffff;       /* cinza escuro */
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-text .title {
+  font-size: 0.875rem;  /* 14px */
+  color: #ffffff;       /* cinza médio */
+}
+
+.card-text .count {
+  font-size: 2rem;      /* 32px */
+  font-weight: 700;
+  color: #ffffff;       /* quase preto */
+}
+
+.card-text .subtitle {
+  font-size: 0.75rem;   /* 12px */
+  color: #ffffff;       /* cinza claro */
+}
+
+.card-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%; /* círculo perfeito */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  overflow: hidden; /* garante que a imagem não vaze do círculo */
+}
+
+/* Para ícones em SVG ou texto (emoji) */
+.card-icon-box svg,
+.card-icon-box i {
+  width: 24px;
+  height: 24px;
+  color: inherit;
+}
+
+/* Para imagens dentro do card */
+.card-icon-box img {
+  width: 24px;       /* tamanho do ícone */
+  height: 24px;
+  object-fit: contain;
+  display: block;
+}
+
+/* =========================
+   CORES DINÂMICAS DOS CARDS
+========================= */
+
+/* Vacinas em dia - verde */
+.card.vacinas-dia .card-icon-box {
+  background-color: #d1fae5;  /* verde claro */
+  color: #059669;              /* verde escuro */
+}
+
+/* Próximas do vencimento - amarelo */
+.card.proximas-vencimento .card-icon-box {
+  background-color: #fef3c7;  /* amarelo claro */
+  color: #b45309;             /* marrom/escuro */
+}
+
+/* Vacinas pendentes - vermelho */
+.card.pendentes .card-icon-box {
+  background-color: #fee2e2;  /* vermelho claro */
+  color: #b91c1c;             /* vermelho escuro */
+}
+
+/* Total de animais - azul ou neutro */
+.card.animais .card-icon-box {
+  background-color: #dbeafe;  /* azul claro */
+  color: #1d4ed8;             /* azul escuro */
+}
+
+
+/* =========================
+   TABELAS
+========================= */
+.form-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  margin-top: 32px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.table-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.table-header-flex h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.table-header-flex .link-primary {
+  font-size: 13px;
+  color: hsl(160, 65%, 40%);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.table-header-flex .link-primary:hover {
+  color: hsl(160, 65%, 35%);
+}
+
+/* TABELA ESTILIZADA */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+th {
+  background: hsl(150, 15%, 94%);
+  text-align: left;
+  font-size: 12px;
+  padding: 12px 10px;
+  text-transform: uppercase;
+  color: hsl(210, 10%, 40%);
+}
+
+td {
+  padding: 12px 10px;
+  font-size: 14px;
+  border-top: 1px solid hsl(150, 15%, 88%);
+}
+
+tr:hover {
+  background: hsl(160, 30%, 96%);
+}
+
+.status {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+}
+
+.status.expired {
+  background: hsl(0, 70%, 55%);
+}
+
+.status.upcoming {
+  background: hsl(38, 92%, 50%);
+}
+
+.status.ok {
+  background: hsl(145, 60%, 42%);
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+@media (max-width: 900px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  .content {
+    margin-left: 0;
+    padding: 20px;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  table {
+    font-size: 13px;
+  }
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar nav a .material-symbols-outlined {
+  font-size: 22px;
+}

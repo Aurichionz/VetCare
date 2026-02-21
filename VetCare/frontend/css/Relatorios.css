@@ -1,0 +1,205 @@
+/* =========================
+   GRID DE CARDS
+========================= */
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* =========================
+   CARDS DE RELATÓRIO
+========================= */
+.report-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #059669;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.report-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.report-card .card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: hsl(158, 22%, 93%); /* fundo leve */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.report-card .card-icon img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.report-card .card-text h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.report-card .card-text p {
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.report-card .count {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* =========================
+   TABELAS DE RELATÓRIOS
+========================= */
+#reportContent table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+  background: #f2e5e5;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+#reportContent th,
+#reportContent td {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+#reportContent th {
+  background: #f3f4f6;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+#reportContent td {
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.875rem;
+}
+
+#reportContent tr:hover {
+  background: #f9fafb;
+}
+
+.status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status.expired {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.status.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* =========================
+   BOTÃO GERAR PDF
+========================= */
+.btn-pdf {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #059669;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn-pdf:hover {
+  background-color: #047857;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.btn-pdf:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.no-print {
+  display: inline-flex;
+}
+
+
+/* =========================
+   CABEÇALHO PDF
+========================= */
+.pdf-header {
+  margin-bottom: 20px;
+}
+
+.pdf-header-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pdf-logo {
+  width: 70px;
+  height: auto;
+}
+
+.pdf-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.pdf-header p {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.pdf-date {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+}

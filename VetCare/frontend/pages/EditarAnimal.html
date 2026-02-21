@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Animal</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/EditarAnimal.css">
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <div class="logo-circle">
+      <img src="../assets/logo.png" alt="Logo VetCare" class="sidebar-logo">
+    </div>
+    <h2>VetCare</h2>
+  </div>
+
+  <hr class="sidebar-divider">
+
+ <nav>
+  <a href="Dashboard.html">
+    <span class="material-symbols-outlined">home</span>
+    Painel
+  </a>
+
+  <a href="CadastroTutor.html">
+    <span class="material-symbols-outlined">add</span>
+    Cadastrar Tutor
+  </a>
+
+  <a href="CadastroAnimal.html">
+    <span class="material-symbols-outlined">add</span>
+    Cadastrar Animal
+  </a>
+
+  <a href="ListarAnimais.html" class="active">
+    <span class="material-symbols-outlined">pets</span>
+    Listar Animais
+  </a>
+
+  <a href="ListarTutores.html">
+    <span class="material-symbols-outlined">group</span>
+    Listar Tutores
+  </a>
+
+  <a href="VacinasPendentes.html">
+    <span class="material-symbols-outlined">vaccines</span>
+    Vacinas Pendentes
+  </a>
+
+  <a href="Relatorios.html">
+    <span class="material-symbols-outlined">description</span>
+    Relatórios
+  </a>
+
+  <a href="../index.html">
+    <span class="material-symbols-outlined">logout</span>
+    Sair
+  </a>
+</nav>
+</aside>
+
+<main class="content animate-fade-in">
+
+  <div class="page-header">
+    <h1>Editar Animal</h1>
+    <p class="subtitle">Atualize os dados do animal</p>
+  </div>
+
+  <div class="form-card">
+    <h3 class="form-section">Dados do Animal</h3>
+
+    <form id="formEditarAnimal">
+
+    <div class="form-grid">
+
+      <div class="info-card">
+        <label>Nome</label>
+        <input type="text" name="nome" id="nome" required>
+      </div>
+
+      <div class="info-card">
+        <label>Espécie</label>
+        <select name="especie" id="especie" required>
+          <option value="Cão">Cão</option>
+          <option value="Gato">Gato</option>
+          <option value="Outro">Outro</option>
+        </select>
+      </div>
+
+      <div class="info-card">
+        <label>Raça</label>
+        <input type="text" name="raca" id="raca" required>
+      </div>
+
+      <div class="info-card">
+        <label>Tutor</label>
+        <select name="tutorId" id="tutorId" required>
+        </select>
+      </div>
+
+      <div class="info-card">
+        <label>Idade</label>
+        <input type="number" name="idade" id="idade" required>
+      </div>
+
+      <div class="info-card">
+        <label>Peso</label>
+        <input type="number" step="0.1" name="peso" id="peso" required>
+      </div>
+
+      <div class="info-card">
+        <label>Sexo</label>
+        <select name="sexo" id="sexo" required>
+          <option value="Macho">Macho</option>
+          <option value="Fêmea">Fêmea</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="icon-btn save">Salvar</button>
+      <a href="ListarAnimais.html">
+        <button type="button" class="secondary">Voltar</button>
+      </a>
+    </div>
+
+    </form>
+
+  </div>
+
+</main>
+
+<script src="../js/EditarAnimal.js"></script>
+
+</body>
+</html>

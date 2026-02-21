@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Nova Vacina</title>
+  <link rel="stylesheet" href="../css/NovaVacina.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <div class="logo-circle">
+      <img src="../assets/logo.png" alt="Logo VetCare" class="sidebar-logo">
+    </div>
+    <h2>VetCare</h2>
+  </div>
+
+  <hr class="sidebar-divider">
+
+  <nav>
+    <a href="Dashboard.html">
+      <span class="material-symbols-outlined">home</span>
+      Painel
+    </a>
+
+    <a href="CadastroTutor.html">
+      <span class="material-symbols-outlined">add</span>
+      Cadastrar Tutor
+    </a>
+
+    <a href="CadastroAnimal.html">
+      <span class="material-symbols-outlined">add</span>
+      Cadastrar Animal
+    </a>
+
+    <a href="ListarAnimais.html" class="active">
+      <span class="material-symbols-outlined">pets</span>
+      Listar Animais
+    </a>
+
+    <a href="ListarTutores.html">
+      <span class="material-symbols-outlined">group</span>
+      Listar Tutores
+    </a>
+
+    <a href="VacinasPendentes.html">
+      <span class="material-symbols-outlined">vaccines</span>
+      Vacinas Pendentes
+    </a>
+
+    <a href="Relatorios.html">
+      <span class="material-symbols-outlined">description</span>
+      Relatórios
+    </a>
+
+    <a href="../index.html">
+      <span class="material-symbols-outlined">logout</span>
+      Sair
+    </a>
+  </nav>
+</aside>
+
+<main class="content animate-fade-in">
+
+  <div class="page-header">
+    <h1>Nova Vacina</h1>
+    <p>Registrar aplicação de vacina</p>
+  </div>
+
+    <div class="form-card">
+    <h3>Dados do Animal</h3>
+    <div class="animal-info">
+      <div class="info-card">
+        <div class="info-label">Nome</div>
+        <div class="info-value" id="animalNome"></div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-label">Espécie</div>
+        <div class="info-value" id="animalEspecie"></div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-label">Raça</div>
+        <div class="info-value" id="animalRaca"></div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-label">Tutor</div>
+        <div class="info-value" id="animalTutor"></div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-label">Idade</div>
+        <div class="info-value" id="animalIdade"></div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-label">Peso</div>
+        <div class="info-value" id="animalPeso"></div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-label">Sexo</div>
+        <div class="info-value" id="animalSexo"></div>
+      </div>
+    </div>
+</div>
+
+  <form id="formVacina" class="form-card">
+    <h3>Dados da Vacina</h3>
+
+    <div class="field">
+      <label>Nome da Vacina</label>
+      <input type="text" name="nomeVacina" required>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      <div class="field">
+        <label>Data da Aplicação</label>
+        <input type="date" name="dataAplicacao" required>
+      </div>
+
+      <div class="field">
+        <label>Data da Revacinação</label>
+        <input type="date" name="dataRevacinacao" required>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="icon-btn save">Salvar</button>
+      <button type="button" class="secondary" onclick="window.history.back()">Voltar</button>
+    </div>
+
+  </form>
+
+</main>
+
+<script src="../js/NovaVacina.js"></script>
+</body>
+</html>

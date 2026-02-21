@@ -1,0 +1,180 @@
+/* =========================
+   RESET E BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.login-body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: hsl(160, 30%, 96%);
+  color: hsl(210, 15%, 20%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+/* =========================
+   CONTAINER PRINCIPAL
+========================= */
+.login-container {
+  width: 100%;
+  max-width: 380px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.logo-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: hsl(158, 22%, 93%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  overflow: hidden; /* importante para cortar a imagem dentro do círculo */
+}
+
+.logo-circle img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain; /* mantém proporção da imagem */
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+.login-card {
+  width: 100%;
+  background: #ffffff;
+  padding: 28px 24px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-card h2 {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+  color: hsl(210, 15%, 20%);
+}
+
+/* Campos */
+.login-card .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.login-card label {
+  font-size: 13px;
+  color: hsl(210, 10%, 60%);
+}
+
+.login-card input {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid hsl(160, 40%, 85%);
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card input:focus {
+  outline: none;
+  border-color: hsl(160, 65%, 40%);
+  box-shadow: 0 0 8px hsl(160, 65%, 40%);
+}
+
+/* Botão */
+.login-card button {
+  padding: 12px 0;
+  border-radius: 12px;
+  border: none;
+  background: hsl(158, 83%, 30%);
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 4px 14px rgba(0,128,128,0.3);
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.login-card button:hover {
+  background: hsl(160, 65%, 35%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,128,128,0.4);
+}
+
+/* Hint de login */
+.login-card .login-hint {
+  font-size: 13px;
+  color: hsl(210, 10%, 60%);
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* Erro */
+.error {
+  color: hsl(0, 70%, 55%);
+  font-size: 13px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+@media (max-width: 420px) {
+  .login-card {
+    padding: 24px 16px;
+  }
+
+  .login-logo h1 {
+    font-size: 20px;
+  }
+
+  .logo-circle {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+  }
+}

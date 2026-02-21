@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - VetClinic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-body">
+
+<div class="login-container animate-fade-in">
+
+<div class="login-logo">
+  <div class="logo-circle">
+    <img src="assets/logo.png" alt="Logo Vetcare">
+  </div>
+  <h1>VetCare</h1>
+  <p>Sistema de Gestão Veterinária</p>
+</div>
+
+<form id="loginForm" class="login-card">
+    <h2>Acesso ao Sistema</h2>
+
+    <div class="field">
+      <label>Login</label>
+      <input type="text" name="usuaria" required>
+    </div>
+
+    <div class="field">
+      <label>Senha</label>
+      <input type="password" name="senha" required>
+    </div>
+
+    <div class="error" id="erroLogin" style="display:none;"></div>
+
+    <button type="submit">Entrar</button>
+
+    <p class="login-hint">
+      Use <strong>admin</strong> / <strong>123456</strong>
+    </p>
+</form>
+
+</div>
+
+  <script src="js/Login.js"></script>
+</body>
+</html>
