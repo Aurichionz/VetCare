@@ -1,125 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Relatórios - VetCare</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../css/dashboard.css">
-<link rel="stylesheet" href="../css/Relatorios.css">
-<link rel="stylesheet"
-href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Relatórios - VetCare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/Relatorios.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
-
 <body>
 
-<aside class="sidebar">
-  <div class="sidebar-header">
-    <div class="logo-circle">
-      <img src="../assets/logo.png" class="sidebar-logo">
+<aside class="sidebar no-print">
+    <div class="sidebar-header">
+        <div class="logo-circle">
+            <img src="../assets/logo.png" class="sidebar-logo">
+        </div>
+        <h2>VetCare</h2>
     </div>
-    <h2>VetCare</h2>
-  </div>
-
-  <hr class="sidebar-divider">
-
-  <nav>
-    <a href="Dashboard.html">
-      <span class="material-symbols-outlined">home</span>
-      Painel
-    </a>
-
-    <a href="Relatorios.html" class="active">
-      <span class="material-symbols-outlined">description</span>
-      Relatórios
-    </a>
-
-    <a href="../index.html">
-      <span class="material-symbols-outlined">logout</span>
-      Sair
-    </a>
-  </nav>
+    <nav>
+        <a href="Dashboard.html">
+            <span class="material-symbols-outlined">home</span> Painel
+        </a>
+        <a href="Relatorios.html" class="active">
+            <span class="material-symbols-outlined">description</span> Relatórios
+        </a>
+        <a href="../index.html">
+            <span class="material-symbols-outlined">logout</span> Sair
+        </a>
+    </nav>
 </aside>
 
-<main class="content animate-fade-in">
+<main class="content">
 
-<div class="page-header">
-    <h1>Relatórios</h1>
-    <p>Visualize os dados do sistema</p>
-</div>
-
-<!-- ================= RELATÓRIO ANIMAIS ================= -->
-
-<div class="form-card" id="relatorioAnimais">
-
-<div class="pdf-header">
-    <div class="pdf-header-top">
-        <img src="../assets/logo.png" class="pdf-logo">
-        <div>
-            <h2>VetCare - Sistema de Controle Veterinário</h2>
-            <p>Relatório de Animais</p>
-            <p class="pdf-date">Gerado em: <span class="data-geracao"></span></p>
-        </div>
+    <div class="page-header no-print">
+        <h1>Relatórios</h1>
+        <p class="subtitle">Visualize e exporte os dados do sistema</p>
     </div>
-    <hr>
-</div>
 
-<table>
-<thead>
-<tr>
-<th>Nome</th>
-<th>Espécie</th>
-<th>Raça</th>
-<th>Tutor</th>
-</tr>
-</thead>
-<tbody id="tbodyAnimais">
-</tbody>
-</table>
+    <!-- ========================= -->
+    <!-- RELATÓRIO DE ANIMAIS -->
+    <!-- ========================= -->
+    <div class="report-section">
 
-<button class="btn-pdf no-print" onclick="gerarPDF('relatorioAnimais')">
-  📄 Gerar PDF
-</button>
+        <div id="areaAnimais" class="pdf-page">
 
-</div>
+            <div class="pdf-header">
+                <img src="../assets/logo.png" class="pdf-logo-img">
+                <div class="pdf-header-text">
+                    <h2>VetCare - Sistema de Controle Veterinário</h2>
+                    <p class="pdf-type">Relatório Geral de Animais</p>
+                    <p class="pdf-date">
+                        Gerado em: <span class="data-geracao"></span>
+                    </p>
+                </div>
+            </div>
 
-<br><br>
+            <div id="tbodyAnimais" class="pdf-body">
+                <!-- Conteúdo gerado via JS -->
+            </div>
 
-<!-- ================= RELATÓRIO VACINAS ================= -->
+            <div class="pdf-button-area no-print">
+                <button class="btn-pdf-action" onclick="gerarPDF('areaAnimais')">
+                    <span class="material-symbols-outlined">picture_as_pdf</span>
+                    Gerar PDF de Animais
+                </button>
+            </div>
 
-<div class="form-card" id="relatorioVacinas">
-
-<div class="pdf-header">
-    <div class="pdf-header-top">
-        <img src="../assets/logo.png" class="pdf-logo">
-        <div>
-            <h2>VetCare - Sistema de Controle Vacinal</h2>
-            <p>Relatório de Vacinas</p>
-            <p class="pdf-date">Gerado em: <span class="data-geracao"></span></p>
         </div>
+
     </div>
-    <hr>
-</div>
 
-<table>
-<thead>
-<tr>
-<th>Animal</th>
-<th>Tutor</th>
-<th>Vacina</th>
-<th>Aplicação</th>
-<th>Revacinação</th>
-</tr>
-</thead>
-<tbody id="tbodyVacinas">
-</tbody>
-</table>
+    <!-- ========================= -->
+    <!-- RELATÓRIO DE VACINAS -->
+    <!-- ========================= -->
+    <div class="report-section">
 
-<button class="btn-pdf no-print" onclick="gerarPDF('relatorioVacinas')">
-  📄 Gerar PDF
-</button>
+        <div id="areaVacinas" class="pdf-page">
 
-</div>
+            <div class="pdf-header">
+                <img src="../assets/logo.png" class="pdf-logo-img">
+                <div class="pdf-header-text">
+                    <h2>VetCare - Sistema de Controle Vacinal</h2>
+                    <p class="pdf-type">Relatório Detalhado de Vacinas</p>
+                    <p class="pdf-date">
+                        Gerado em: <span class="data-geracao"></span>
+                    </p>
+                </div>
+            </div>
+
+            <div id="tbodyVacinas" class="pdf-body">
+                <!-- Conteúdo gerado via JS -->
+            </div>
+
+            <div class="pdf-button-area no-print">
+                <button class="btn-pdf-action" onclick="gerarPDF('areaVacinas')">
+                    <span class="material-symbols-outlined">picture_as_pdf</span>
+                    Gerar PDF de Vacinas
+                </button>
+            </div>
+
+        </div>
+
+    </div>
 
 </main>
 

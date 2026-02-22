@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("formTutor");
+    const form = document.getElementById("formTutor"); // Verifique se o ID no HTML é este
     const mensagemErro = document.getElementById("mensagemErro");
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
 
+        // Captura os valores dos inputs do seu HTML
         const dados = {
             nome: form.nome.value,
             cpf: form.cpf.value,
@@ -29,13 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("✅ Tutor cadastrado com sucesso!");
                 window.location.href = "ListarTutores.html";
             } else {
-                mensagemErro.style.display = "block";
-                mensagemErro.textContent = resultado.erro || "Erro ao cadastrar tutor.";
+                alert("❌ Erro: " + resultado.erro);
             }
         } catch (erro) {
             console.error("Erro na requisição:", erro);
-            mensagemErro.style.display = "block";
-            mensagemErro.textContent = "Servidor offline ou erro de conexão.";
+            alert("Servidor offline ou erro de conexão.");
         }
     });
 });

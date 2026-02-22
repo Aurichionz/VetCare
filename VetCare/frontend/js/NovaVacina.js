@@ -9,27 +9,45 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
-    // Carregar dados do animal para os cards informativos
+    // Carregar dados do animal para o cabeçalho/card
     try {
         const response = await fetch(`http://localhost:3000/animais/${id}`);
         const animal = await response.json();
+        
+        // Preenche TODOS os campos informativos conforme sua imagem
+        if (document.getElementById("animalNome")) 
+            document.getElementById("animalNome").textContent = animal.nome || "---";
+        
+        if (document.getElementById("animalEspecie")) 
+            document.getElementById("animalEspecie").textContent = animal.especie || "---";
+        
+        if (document.getElementById("animalRaca")) 
+            document.getElementById("animalRaca").textContent = animal.raca || "---";
+            
+        if (document.getElementById("animalTutor")) 
+            document.getElementById("animalTutor").textContent = animal.tutor_nome || "---";
+            
+        if (document.getElementById("animalIdade")) {
+            const idade = animal.idade;
+            document.getElementById("animalIdade").textContent = idade ? (idade === 1 ? "1 ano" : `${idade} anos`) : "---";
+        }
 
-        document.getElementById("animalNome").textContent = animal.nome;
-        document.getElementById("animalEspecie").textContent = animal.especie;
-        document.getElementById("animalRaca").textContent = animal.raca;
-        document.getElementById("animalTutor").textContent = animal.tutor_nome;
-        document.getElementById("animalIdade").textContent = animal.idade === 1 ? "1 ano" : `${animal.idade} anos`;
-        document.getElementById("animalPeso").textContent = parseFloat(animal.peso).toFixed(2) + " kg";
-        document.getElementById("animalSexo").textContent = animal.sexo;
-    } catch (error) {
-        console.error("Erro ao carregar dados do animal:", error);
+        if (document.getElementById("animalPeso")) {
+            const peso = parseFloat(animal.peso);
+            document.getElementById("animalPeso").textContent = !isNaN(peso) ? `${peso.toFixed(2)} kg` : "---";
+        }
+
+        if (document.getElementById("animalSexo")) 
+            document.getElementById("animalSexo").textContent = animal.sexo || "---";
+
+    } catch (err) { 
+        console.error("Erro ao carregar dados do animal:", err); 
     }
 
-    // Ação do Botão Salvar
+    // Lógica do formulário de submissão
     formVacina.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        // Pegamos os valores direto dos nomes (name) dos inputs do seu HTML
         const dadosVacina = {
             id_animal: id,
             nome_vacina: formVacina.nomeVacina.value,
@@ -47,15 +65,13 @@ document.addEventListener("DOMContentLoaded", async () => {
             const resultado = await res.json();
 
             if (res.ok && resultado.sucesso) {
-                alert("💉 Vacina registrada com sucesso!");
+                alert("✅ Vacina registrada!");
                 window.location.href = `HistoricoVacina.html?id=${id}`;
             } else {
-                // Se o erro de 'Unknown column' aparecer aqui, você não reiniciou o servidor!
-                alert("Erro ao salvar: " + (resultado.erro || "Erro desconhecido"));
+                alert("Erro: " + (resultado.erro || "Falha ao salvar"));
             }
         } catch (error) {
-            console.error("Erro na requisição:", error);
-            alert("Não foi possível conectar ao servidor.");
+            alert("Servidor offline!");
         }
     });
 });

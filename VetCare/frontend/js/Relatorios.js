@@ -1,94 +1,78 @@
 document.addEventListener("DOMContentLoaded", () => {
-    carregarAnimais();
-    carregarVacinas();
+    carregarDados();
     atualizarDatas();
 });
 
 function atualizarDatas() {
     const hoje = new Date().toLocaleDateString("pt-BR");
-    document.querySelectorAll(".data-geracao")
-        .forEach(span => span.textContent = hoje);
+    document.querySelectorAll(".data-geracao").forEach(span => span.textContent = hoje);
 }
 
-async function carregarAnimais() {
-    const tbody = document.getElementById("tbodyAnimais");
+function formatarDataBR(dataISO) {
+    if (!dataISO) return "---";
+    const data = new Date(dataISO);
+    return new Date(data.getTime() + data.getTimezoneOffset() * 60000).toLocaleDateString("pt-BR");
+}
 
+async function carregarDados() {
+    // Carregar Animais
     try {
-        const response = await fetch("http://localhost:3000/relatorios/animais");
-        const dados = await response.json();
-
-        if (dados.length === 0) {
-            tbody.innerHTML =
-                `<tr><td colspan="4" style="text-align:center;">
-                 Nenhum animal cadastrado.
-                 </td></tr>`;
-            return;
-        }
-
-        tbody.innerHTML = dados.map(a => `
-            <tr>
-                <td>${a.nome}</td>
-                <td>${a.especie}</td>
-                <td>${a.raca}</td>
-                <td>${a.tutor}</td>
-            </tr>
+        const resA = await fetch("http://localhost:3000/relatorios/animais");
+        const animais = await resA.json();
+        document.getElementById("tbodyAnimais").innerHTML = animais.map(a => `
+            <div class="report-item-card">
+                <div class="card-title">${a.nome}</div>
+                <div class="data-row"><span class="label">ESPÉCIE</span><span class="value">${a.especie}</span></div>
+                <div class="data-row"><span class="label">RAÇA</span><span class="value">${a.raca}</span></div>
+                <div class="data-row"><span class="label">TUTOR</span><span class="value">${a.tutor}</span></div>
+            </div>
         `).join("");
+    } catch (e) { console.error("Erro animais:", e); }
 
-    } catch (error) {
-        console.error("Erro ao carregar animais:", error);
-    }
-}
-
-async function carregarVacinas() {
-    const tbody = document.getElementById("tbodyVacinas");
-
+    // Carregar Vacinas
     try {
-        const response = await fetch("http://localhost:3000/relatorios/vacinas");
-        const dados = await response.json();
+        const resV = await fetch("http://localhost:3000/relatorios/vacinas");
+        const vacinas = await resV.json();
+        const hoje = new Date().setHours(0,0,0,0);
 
-        if (dados.length === 0) {
-            tbody.innerHTML =
-                `<tr><td colspan="5" style="text-align:center;">
-                 Nenhuma vacina cadastrada.
-                 </td></tr>`;
-            return;
-        }
-
-        tbody.innerHTML = dados.map(v => `
-            <tr>
-                <td>${v.animal}</td>
-                <td>${v.tutor}</td>
-                <td>${v.nome}</td>
-                <td>${formatarData(v.data_aplicacao)}</td>
-                <td>${formatarData(v.data_revacinacao)}</td>
-            </tr>
-        `).join("");
-
-    } catch (error) {
-        console.error("Erro ao carregar vacinas:", error);
-    }
-}
-
-function formatarData(data) {
-    if (!data) return "-";
-    return new Date(data).toLocaleDateString("pt-BR");
+        document.getElementById("tbodyVacinas").innerHTML = vacinas.map(v => {
+            const isPendente = new Date(v.data_revacinacao).getTime() < hoje;
+            return `
+                <div class="report-item-card">
+                    <div class="card-title">${v.animal}</div>
+                    <div class="data-row"><span class="label">VACINA</span><span class="value">${v.nome_vacina}</span></div>
+                    <div class="data-row"><span class="label">TUTOR</span><span class="value">${v.tutor}</span></div>
+                    <div class="data-row"><span class="label">APLICAÇÃO</span><span class="value">${formatarDataBR(v.data_aplicacao)}</span></div>
+                    <div class="data-row"><span class="label">PRÓXIMA DOSE</span><span class="value">${formatarDataBR(v.data_revacinacao)}</span></div>
+                    <div class="data-row"><span class="label">STATUS</span><span class="value" style="color:${isPendente ? 'red' : 'green'}; font-weight:bold">${isPendente ? 'Pendente' : 'Em dia'}</span></div>
+                </div>`;
+        }).join("");
+    } catch (e) { console.error("Erro vacinas:", e); }
 }
 
 function gerarPDF(elementId) {
-    const element = document.getElementById(elementId);
-    const botoes = element.querySelectorAll('.no-print');
 
-    botoes.forEach(btn => btn.style.display = 'none');
+    const element = document.getElementById(elementId);
+
+    window.scrollTo(0, 0);
 
     const opt = {
-        margin: 0.5,
-        filename: 'relatorio_vetcare.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+        margin: 10,
+        filename: 'Relatorio_VetCare.pdf',
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: {
+            scale: 2,
+            useCORS: true,
+            scrollX: 0,
+            scrollY: 0
+        },
+        jsPDF: {
+            unit: 'mm',
+            format: 'a4',
+            orientation: 'portrait'
+        },
+        pagebreak: { mode: ['css', 'legacy'] } // ❗ removido avoid-all
     };
 
-    html2pdf().set(opt).from(element).save().then(() => {
-        botoes.forEach(btn => btn.style.display = 'inline-flex');
-    });
+    html2pdf().set(opt).from(element).save();
 }

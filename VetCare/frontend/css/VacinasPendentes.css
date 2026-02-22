@@ -168,8 +168,84 @@ tr:hover {
   background-color: #059669;
 }
 
+/* Status estilo pill (arredondado) */
+.status {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
+}
 
+.status.expired { background: #fee2e2; color: #b91c1c; }
+.status.warning { background: #fef3c7; color: #92400e; }
 
+/* Botão de Ação Verde Arredondado */
+.btn-vacinar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 12px;
+  background: #059669; /* Verde esmeralda */
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.btn-vacinar:hover {
+  background: #047857;
+  transform: scale(1.05);
+}
+
+.btn-vacinar .material-symbols-outlined {
+  font-size: 22px;
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.btn-vacinar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 12px;
+  background: #059669; /* Seu verde */
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-vacinar:hover {
+  background: #047857;
+}
+/* Este bloco garante que nada com a classe no-print saia no PDF ou na impressora */
+@media print {
+    .no-print, .btn-pdf, button {
+        display: none !important;
+        visibility: hidden !important;
+    }
+}
+
+/* Ajuste extra para o layout da tabela não quebrar sem o botão */
+.form-card {
+    display: flex;
+    flex-direction: column;
+}
 /* =========================
    RESPONSIVO
 ========================= */

@@ -88,15 +88,34 @@ router.put("/:id", async (req, res) => {
 
 module.exports = router;
 
-// EXCLUIR
+// ROTA DE EXCLUSÃO DE ANIMAL COM LÓGICA DE LIMPEZA DE TUTOR
 router.delete("/:id", async (req, res) => {
-  try {
-    await db.query("DELETE FROM animal WHERE id_animal = ?", [req.params.id]);
-    res.json({ mensagem: "Animal excluído com sucesso" });
-  } catch (error) {
-    res.status(500).json({ erro: "Erro ao excluir animal." });
-  }
-});
+    try {
+        const idAnimal = req.params.id;
 
+        // 1. Descobrir quem é o tutor desse animal antes de deletar o animal
+        const [animal] = await db.query("SELECT id_tutor FROM animal WHERE id_animal = ?", [idAnimal]);
+        
+        if (animal.length === 0) return res.status(404).json({ erro: "Animal não encontrado" });
+        const idTutor = animal[0].id_tutor;
+
+        // 2. Deletar o animal
+        await db.query("DELETE FROM animal WHERE id_animal = ?", [idAnimal]);
+
+        // 3. Verificar se esse tutor ainda tem algum OUTRO animal
+        const [outrosAnimais] = await db.query("SELECT id_animal FROM animal WHERE id_tutor = ?", [idTutor]);
+
+        // 4. Se não sobrou nenhum animal, deleta o tutor automaticamente
+        if (outrosAnimais.length === 0) {
+            await db.query("DELETE FROM tutor WHERE id_tutor = ?", [idTutor]);
+            return res.json({ mensagem: "Animal e Tutor (sem animais) excluídos com sucesso!" });
+        }
+
+        res.json({ mensagem: "Animal excluído com sucesso!" });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ erro: "Erro ao processar exclusão" });
+    }
+});
 // ISSO É O MAIS IMPORTANTE:
 module.exports = router;

@@ -1,59 +1,65 @@
-const API_URL = "http://localhost:3000/api";
+document.addEventListener("DOMContentLoaded", async () => {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    const form = document.getElementById("formEditarTutor");
 
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
+    if (!id) {
+        window.location.href = "ListarTutores.html";
+        return;
+    }
 
-const form = document.getElementById("formEditarTutor");
+    // CARREGAR DADOS
+    try {
+        // Rota baseada no seu app.js: /tutores
+        const response = await fetch(`http://localhost:3000/tutores/${id}`);
+        
+        if (!response.ok) throw new Error("Tutor não encontrado");
 
-// ===============================
-// CARREGAR TUTOR
-// ===============================
-async function carregarTutor() {
-  try {
-    const response = await fetch(`${API_URL}/tutor/${id}`);
-    const tutor = await response.json();
+        const tutor = await response.json();
 
-    document.getElementById("nome").value = tutor.nome;
-    document.getElementById("telefone").value = tutor.telefone;
-    document.getElementById("rua").value = tutor.rua;
-    document.getElementById("numero").value = tutor.numero;
-    document.getElementById("bairro").value = tutor.bairro;
-    document.getElementById("cidade").value = tutor.cidade;
-    document.getElementById("estado").value = tutor.estado;
+        // Preenche os campos usando o ID ou Name do formulário
+        form.nome.value = tutor.nome || "";
+        form.telefone.value = tutor.telefone || "";
+        form.rua.value = tutor.rua || "";
+        form.numero.value = tutor.numero || "";
+        form.bairro.value = tutor.bairro || "";
+        form.cidade.value = tutor.cidade || "";
+        form.estado.value = tutor.estado || "";
 
-  } catch (error) {
-    console.error("Erro ao carregar tutor:", error);
-  }
-}
+    } catch (error) {
+        console.error("Erro:", error);
+        alert("Erro ao carregar dados do tutor.");
+    }
 
-// ===============================
-// ATUALIZAR TUTOR
-// ===============================
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
+    // SALVAR
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-  const dados = {
-    nome: document.getElementById("nome").value,
-    telefone: document.getElementById("telefone").value,
-    rua: document.getElementById("rua").value,
-    numero: document.getElementById("numero").value,
-    bairro: document.getElementById("bairro").value,
-    cidade: document.getElementById("cidade").value,
-    estado: document.getElementById("estado").value
-  };
+        const dados = {
+            nome: form.nome.value,
+            telefone: form.telefone.value,
+            rua: form.rua.value,
+            numero: form.numero.value,
+            bairro: form.bairro.value,
+            cidade: form.cidade.value,
+            estado: form.estado.value
+        };
 
-  try {
-    await fetch(`${API_URL}/tutor/${id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(dados)
+        try {
+            const res = await fetch(`http://localhost:3000/tutores/${id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(dados)
+            });
+
+            if (res.ok) {
+                alert("✅ Tutor atualizado!");
+                window.location.href = "ListarTutores.html";
+            } else {
+                alert("Erro ao salvar alterações.");
+            }
+        } catch (error) {
+            console.error("Erro ao salvar:", error);
+        }
     });
-
-    window.location.href = "ListarTutores.html";
-
-  } catch (error) {
-    console.error("Erro ao atualizar:", error);
-  }
 });
-
-carregarTutor();
