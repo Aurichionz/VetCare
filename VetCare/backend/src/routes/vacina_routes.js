@@ -6,22 +6,25 @@ router.get("/pendentes", async (req, res) => {
     try {
         const sql = `
             SELECT 
-                v.id_vacina, 
-                v.nome AS nome_vacina, 
-                v.data_revacinacao, 
-                a.nome AS animal_nome, 
-                t.nome AS tutor_nome,
-                a.id_animal
+                v.id_vacina,
+                v.id_animal,
+                v.nome AS nome_vacina,
+                DATE_FORMAT(v.data_aplicacao, '%Y-%m-%d') AS data_aplicacao,
+                DATE_FORMAT(v.data_revacinacao, '%Y-%m-%d') AS data_revacinacao,
+                a.nome AS animal_nome,
+                t.nome AS tutor_nome
             FROM vacina v
             JOIN animal a ON v.id_animal = a.id_animal
             JOIN tutor t ON a.id_tutor = t.id_tutor
             WHERE v.data_revacinacao <= DATE_ADD(CURDATE(), INTERVAL 15 DAY)
             ORDER BY v.data_revacinacao ASC
         `;
+
         const [rows] = await db.query(sql);
         res.json(rows);
+
     } catch (error) {
-        console.error("Erro ao buscar vacinas críticas:", error.message);
+        console.error("Erro ao buscar vacinas pendentes:", error.message);
         res.status(500).json({ erro: error.message });
     }
 });
