@@ -175,6 +175,22 @@ tr:hover {
   background-color: #059669;
 }
 
+.pesquisa {
+    margin-bottom: 20px;
+}
+
+.pesquisa input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 300px;
+    font-size: 14px;
+}
+
+.pesquisa input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
 
 /* =========================
    RESPONSIVO

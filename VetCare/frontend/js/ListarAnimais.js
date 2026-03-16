@@ -67,3 +67,19 @@ async function excluirAnimal(id) {
         console.error("Erro ao excluir animal:", error);
     }
 }
+
+function filtrarAnimais() {
+    const input = document.getElementById("pesquisa-animal");
+    const filtro = input.value.toLowerCase();
+    const linhas = document.querySelectorAll("#tabela-animais tr");
+
+    linhas.forEach(linha => {
+        const textoLinha = linha.textContent.toLowerCase();
+
+        if (textoLinha.includes(filtro)) {
+            linha.style.display = "";
+        } else {
+            linha.style.display = "none";
+        }
+    });
+}

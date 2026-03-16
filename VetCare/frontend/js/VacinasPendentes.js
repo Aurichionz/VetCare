@@ -157,3 +157,19 @@ window.excluirVacina = async function(id) {
         alert("Erro ao conectar com o servidor.");
     }
 };
+
+function filtrarVacinas() {
+    const input = document.getElementById("pesquisa-vacina");
+    const filtro = input.value.toLowerCase();
+    const linhas = document.querySelectorAll("#tbodyVacinas tr");
+
+    linhas.forEach(linha => {
+        const texto = linha.textContent.toLowerCase();
+
+        if (texto.includes(filtro)) {
+            linha.style.display = "";
+        } else {
+            linha.style.display = "none";
+        }
+    });
+}

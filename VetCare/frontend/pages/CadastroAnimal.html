@@ -122,11 +122,16 @@
 
       <div class="animal-field">
         <label>Tutor</label>
-        <select name="tutorId" id="selectTutor" required>
-          <option value="">Selecione</option>
-        </select>
-      </div>
 
+        <input 
+          type="text"
+          id="tutorInput"
+          list="listaTutores"
+          placeholder="Digite o nome do tutor"
+          required
+        >
+        <datalist id="listaTutores"></datalist>
+      </div>
       <div class="form-actions">
         <button type="submit">Cadastrar</button>
         <a href="Dashboard.html">

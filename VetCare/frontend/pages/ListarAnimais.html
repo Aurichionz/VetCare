@@ -66,6 +66,10 @@
 <main class="content animate-fade-in">
 
 <h1>Lista de Animais</h1>
+<div class="pesquisa">
+    <label for="pesquisa-animal">Pesquisar animal:</label>
+    <input type="text" id="pesquisa-animal" placeholder="Digite nome, tutor ou espécie..." onkeyup="filtrarAnimais()">
+</div>
 
 <div class="form-card" style="margin-top: 32px;">
 <table>
@@ -81,6 +85,7 @@
   <th>Ações</th>
 </tr>
 </thead>
+
 
 <tbody id="tabela-animais">
 <!-- JavaScript vai inserir aqui -->

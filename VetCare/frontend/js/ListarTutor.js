@@ -57,3 +57,19 @@ async function excluirTutor(id) {
         console.error("Erro ao excluir tutor:", error);
     }
 }
+
+function filtrarTutores() {
+    const input = document.getElementById("pesquisa-tutor");
+    const filtro = input.value.toLowerCase();
+    const linhas = document.querySelectorAll("#tabela-tutores tr");
+
+    linhas.forEach(linha => {
+        const textoLinha = linha.textContent.toLowerCase();
+
+        if (textoLinha.includes(filtro)) {
+            linha.style.display = "";
+        } else {
+            linha.style.display = "none";
+        }
+    });
+}

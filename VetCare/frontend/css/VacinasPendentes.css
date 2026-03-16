@@ -233,6 +233,23 @@ table td {
 .btn-vacinar:hover {
   background: #047857;
 }
+.pesquisa {
+    margin-bottom: 20px;
+}
+
+.pesquisa input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 300px;
+    font-size: 14px;
+}
+
+.pesquisa input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
 /* Este bloco garante que nada com a classe no-print saia no PDF ou na impressora */
 @media print {
     .no-print, .btn-pdf, button {
